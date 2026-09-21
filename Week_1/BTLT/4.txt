@@ -1,0 +1,19 @@
+BÀI 4.
+
++ Cấu trúc các cây hiện tại:
+    - Cây gốc 0: Gồm {0, 1, 2, 3} -> Kích thước = 4.
+    - Cây gốc 4: Gồm {4, 5, 6, 7} -> Kích thước = 4.
+    - Nhánh {8, 9}: Do parent[9] = 8 nên nhánh này có kích thước = 2 và 8 là gốc của nhánh.
+
+Ta có quy tắc Weighted Quick-Union (Link-by-size):
+    - Chỉ nối gốc với gốc.
+    - Cây có kích thước nhỏ hơn trỏ vào gốc của cây có kích thước lớn hơn.
+
+Xét các trường hợp:
+    - parent[8] = 8: Nút 8 tự làm gốc của tập hợp {8, 9} (chưa gộp vào đâu). -> THỎA MÃN.
+    - parent[8] = 0: Tập {8, 9} (size 2) gộp vào Cây gốc 0 (size 4). Do 2 < 4 -> 8 trỏ vào 0. -> THỎA MÃN.
+    - parent[8] = 4: Tập {8, 9} (size 2) gộp vào Cây gốc 4 (size 4). Do 2 < 4 -> 8 trỏ vào 4. -> THỎA MÃN.
+    - Các giá trị 1, 2, 3, 5, 6, 7: Không phải nút gốc -> KHÔNG THỎA MÃN.
+    - Giá trị 9: Tạo chu trình 8 -> 9 -> 8 -> KHÔNG THỎA MÃN.
+
+KẾT LUẬN: parent[8] có thể nhận các giá trị là: 0, 4, 8.

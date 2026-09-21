@@ -1,0 +1,12 @@
+BÀI 3.
+
+- (0, 4): KHÔNG (Size 0 = Size 4 = 4 -> Phải là 4 trỏ 0, nhưng hình là 0 trỏ 4).
+- (2, 3): KHÔNG (Mũi tên 3 -> 2 không trỏ vào nút gốc 4).
+- (4, 0): THỎA MÃN (Size 4 = Size 0 = 4 -> Gốc q(0) trỏ vào gốc p(4) -> 0 -> 4).
+- (4, 5): THỎA MÃN (Size 4 = 6 > Size 5 = 2 -> Gốc nhỏ(5) trỏ vào gốc lớn(4) -> 5 -> 4).
+- (5, 0): THỎA MÃN (Root(5) size 2, Root(0) là 4 size 6 -> Gốc nhỏ(5) trỏ gốc lớn(4) -> 5 -> 4).
+- (5, 7): KHÔNG (Mũi tên 7 -> 5 không trỏ vào nút gốc 4).
+- (6, 4): THỎA MÃN (Size 6 = 1 < Size 4 = 6 -> Gốc nhỏ(6) trỏ vào gốc lớn(4) -> 6 -> 4).
+- (8, 9): THỎA MÃN (Size 8 = Size 9 = 1 -> Gốc q(9) trỏ vào gốc p(8) -> 9 -> 8).
+
+KẾT LUẬN: Các cặp thỏa mãn là (4, 0), (4, 5), (5, 0), (6, 4), (8, 9).

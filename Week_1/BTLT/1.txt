@@ -1,0 +1,22 @@
+BÀI 1.
+
+Lấy n = 3, khởi tạo mảng ban đầu leader = [0, 1, 2]
+
+Chạy lệnh union(0,1):
+    Mảng mới leader = [1, 1, 2]
+
+Chạy lệnh union(0,2):
+    p = 0, q = 2
+    +i = 0: (leader[0] == leader[0]) -> Đúng -> Cập nhật leader[0] = leader[2] = 2. Mảng thành [2, 1, 2]
+    +i = 1: (leader[1] == leader[0]) -> Sai -> leader[1] giữ nguyên là 1.
+    Mảng mới leader = [2, 1, 2]
+
+Chọn cặp phần tử: i = 0, j = 1 (Rõ ràng 0 và 1 thuộc cùng tập hợp):
+    - find(0) = 2
+    - find(1) = 1
+    -> find(0) != find(1) => Đoạn code cài đặt hoàn toàn sai.
+
+-> Nguyên nhân gây bug:
+    - Trong hàm union(p, q), giá trị leader[p] bị cập nhật trực tiếp thành leader[q] ngay khi vòng lặp duyệt qua i = p.
+    - Do đó, các phần tử i nằm sau p (thuộc cùng nhóm với p) sẽ so sánh với giá trị MỚI của leader[p] thay vì giá trị CŨ.
+    - Hậu quả: Các phần tử đứng sau p bị bỏ sót, không được cập nhật sang nhóm mới.

@@ -1,0 +1,14 @@
+BÀI 2.
+
+(a) Số thành phần liên thông: 1
+    -> Tất cả n phần tử đều được gộp lại với nhau thành một tập hợp duy nhất qua chuỗi các thao tác union liên tiếp.
+
+(b) Quick-find (Số lần cập nhật mảng): ~ (1/2)n^2
+    +Ở bước union(0, i), toàn bộ các phần tử thuộc nhóm của 0 (lúc này đang có i phần tử) đều phải thay đổi giá trị.
+    -> Tổng số phép cập nhật là tổng cấp số cộng: 1 + 2 + 3 + ... + (n-1) = n(n-1)/2 ~ (1/2)n^2.
+
+(c) Quick-union (Độ phức tạp truy cập mảng của find(0)): Θ(n)
+    -> Cây tạo ra có dạng một đường thẳng dài (0 -> 1 -> 2 -> ... -> n-1). Để thực hiện find(0), thuật toán phải leo từ nút 0 lên tận root là nút (n-1), tốn số bước tỉ lệ thuận với n.
+
+(d) Weighted quick-union (Độ phức tạp truy cập mảng của find(0)): Θ(1)
+    -> Vì nhóm của 0 luôn có kích thước lớn nhất sau mỗi bước gộp, nút 0 sẽ luôn được giữ làm root. Khi gọi find(0), do 0 đã là root sẵn rồi nên thuật toán trả về kết quả ngay lập tức (O(1)).

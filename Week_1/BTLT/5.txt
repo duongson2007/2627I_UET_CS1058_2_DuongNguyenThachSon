@@ -1,0 +1,15 @@
+BÀI 5.
+
+Ta có quy tắc Weighted Quick-Union (Link-by-size):
+    - Chỉ nối 2 nút gốc. Nút đã thành nút con sẽ KHÔNG BAO GIỜ nhận thêm nút con mới.
+    - Cây nhỏ trỏ vào gốc cây lớn -> Sau khi gộp, Size(cha) >= 2 * Size(con).
+
+Kích thước các cây con:
+    - Cây con gốc 4 = {4, 3} -> Size(4) = 2.
+    - Cây con gốc 6 = {6, 1, 8} -> Size(6) = 3.
+    - Cây con gốc 2 = {2} -> Size(2) = 1.
+    - Cây con gốc 0 = {0} + Cây(2) + Cây(4) + Cây(6) = 1 + 1 + 2 + 3 = 7 phần tử.
+    - Cây gốc 5 = Toàn bộ 10 phần tử (từ 0 đến 9) -> Size(5) = 10.
+
+Vì parent[0] = 5, mà Size(5) = 10 >= 2 * Size(0) = 2 * 7 = 14.
+Vậy dữ liệu đã cho không thể là biểu diễn parent-link của một cấu trúc dữ liệu weighted quick union.
