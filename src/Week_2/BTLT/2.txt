@@ -1,0 +1,17 @@
+- Phân tích:
+
+  1. Vòng lặp k (Vòng lặp trong cùng):
+     - Biến k bắt đầu từ 1, nhân đôi sau mỗi bước (k = k * 2) cho đến khi k > n^2.
+     - Số lần lặp của vòng này độc lập với i và j, luôn cố định xấp xỉ: log2(n^2) = 2 * log2(n).
+
+  2. Cặp vòng lặp i và j (Hai vòng lặp ngoài):
+     - Đây là bài toán đếm số cặp (i, j) thỏa mãn điều kiện: 0 <= i < j < n^2.
+     - Số lần lặp chính xác của cặp này là số cách chọn 2 phần tử từ tập hợp có n^2 phần tử:
+       C(2, n^2) = (n^2 * (n^2 - 1)) / 2 = 1/2 * n^4 - 1/2 * n^2.
+     - Khi đánh giá tiệm cận Tilde (~), ta chỉ giữ lại số hạng bậc cao nhất là: 1/2 * n^4.
+
+  3. Tổng số lần gọi hàm op():
+     - Bằng tích số lần lặp của (i, j) và vòng lặp k:
+       Tổng số lần ~ (1/2 * n^4) * (2 * log2(n)) = n^4 * log2(n).
+
+- Kết luận: ~ n^4 log2(n)

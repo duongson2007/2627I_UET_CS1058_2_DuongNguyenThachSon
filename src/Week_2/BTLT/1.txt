@@ -1,0 +1,66 @@
+BÀI 1:
+
+Ta có:
+  Vòng lặp chạy từ i = 10, mỗi bước tăng lên 2 đơn vị, kết thúc khi i >= n + 5.
+  Số lần lặp chính xác là: (n + 5 - 10) / 2 = (n - 5) / 2 = n/2 - 2.5
+
+- Kết quả:
+  + Tilde (~): ~ n/2
+  + Big Theta (Θ): Θ(n)
+
+BÀI 2:
+
+Ta có:
+  Vòng lặp chạy từ i = 1, mỗi bước nhân đôi i (tăng trưởng mũ), kết thúc khi i > n^3.
+  Giá trị của i qua các bước là 2^0, 2^1, 2^2,..., 2^k.
+  Điều kiện dừng: 2^k > n^3  =>  k > log2(n^3) = 3 * log2(n).
+  Số lần lặp chính xác là: log2(n^3) + 1 = 3 * log2(n) + 1.
+
+- Kết quả:
+  + Tilde (~): ~ 3 * log2(n)
+  + Big Theta (Θ): Θ(log n)
+
+BÀI 3:
+
+Ta có:
+  Vòng lặp ngoài (i) chạy đúng n lần.
+  Vòng lặp trong (j) là hằng số, luôn chạy đúng 100 lần với mọi i.
+  Tổng số lần lặp là: 100 * n.
+
+- Kết quả:
+  + Tilde (~): ~ 100n
+  + Big Theta (Θ): Θ(n)
+
+BÀI 4:
+
+Ta có:
+  Vòng lặp ngoài (i) thỏa mãn i^2 < n  =>  i < sqrt(n). Chay khoảng sqrt(n) lần.
+  Vòng lặp trong (j) tăng trưởng nhân 3: chạy khoảng log3(n) lần.
+  Tổng số lần lặp là tích của hai vòng lặp: sqrt(n) * log3(n).
+
+- Kết quả:
+  + Tilde (~): ~ sqrt(n) * log3(n)
+  + Big Theta (Θ): Θ(sqrt(n) * log n)
+
+BÀI 5:
+
+Ta có:
+  Vòng lặp ngoài (i) chạy đúng n lần.
+  Vòng lặp trong (j) tăng trưởng nhân đôi: chạy khoảng log2(n) lần.
+  Tổng số lần lặp là tích của hai vòng lặp: n * log2(n).
+
+- Kết quả:
+  + Tilde (~): ~ n * log2(n)
+  + Big Theta (Θ): Θ(n * log n)
+
+BÀI 6:
+
+Ta có:
+  Hai vòng lặp ngoài cùng (i và j) chạy tổng cộng: n * 100 = 100n lần.
+  Cặp vòng lặp trong cùng (k và l) là bài toán tìm số cặp (k, l) thỏa mãn 0 <= k <= l < n.
+  Số lần lặp của cặp (k, l) là: n + (n-1) + (n-2) + ... + 1 = n*(n + 1)/2 = 0.5*n^2 + 0.5*n.
+  Tổng số lần lặp của cả 4 vòng lặp: 100n * (0.5*n^2 + 0.5*n) = 50*n^3 + 50*n^2.
+
+- Kết quả:
+  + Tilde (~): ~ 50 * n^3
+  + Big Theta (Θ): Θ(n^3)

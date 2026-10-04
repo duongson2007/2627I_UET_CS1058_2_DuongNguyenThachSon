@@ -1,0 +1,14 @@
+- Phân tích:
+  1. Vòng lặp k (Vòng lặp trong cùng):
+     Chạy từ 1 đến n, mỗi bước tăng thêm n/100 đơn vị (k = k + n/100).
+     Số lần lặp cố định độc lập là: n / (n/100) = 100 lần.
+
+  2. Cặp vòng lặp i và j (Hai vòng lặp ngoài):
+     Đây là cấu trúc đếm số cặp thỏa mãn: 1 <= i <= j <= n.
+     Số lần lặp chính xác là: n + (n-1) + ... + 1 = n*(n + 1)/2 = 1/2*n^2 + 1/2*n.
+     Khi đánh giá tiệm cận Tilde (~), ta lấy số hạng bậc cao nhất: ~ 1/2*n^2.
+
+  3. Tổng số lần in từ "hello":
+     Tích của hai thành phần trên: 100 * (1/2 * n^2) = 50n^2.
+
+- Kết luận: ~ 50n^2

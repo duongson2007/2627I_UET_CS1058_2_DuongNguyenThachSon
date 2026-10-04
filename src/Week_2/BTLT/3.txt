@@ -1,0 +1,8 @@
+- Phân tích:
+  Trong biểu thức f(n), số hạng có bậc tăng trưởng cao nhất khi n tiến ra vô cùng là 2n^2.
+  Theo định nghĩa Big O (độ phức tạp cạnh trên) và Big Omega (độ phức tạp cạnh dưới), ta chỉ giữ lại thành phần bậc cao nhất và bỏ qua hệ số tự do.
+  Do đó, f(n) có bậc tăng trưởng chính xác là Theta(n^2). Điều này đồng nghĩa với việc f(n) vừa là O(n^2) vừa là Omega(n^2).
+
+- Kết luận:
+  + O(n^2)
+  + Ω(n^2)

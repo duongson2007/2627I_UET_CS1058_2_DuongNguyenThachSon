@@ -1,0 +1,9 @@
+- Phân tích:
+  1. Mỗi đối tượng Node (Object overhead): 16 bytes.
+  2. Các biến tham chiếu bên trong Node (key, value, parent, left, right): 5 con trỏ * 8 bytes = 40 bytes.
+  3. Biến kiểu nguyên bên trong Node (count): 4 bytes.
+  4. Phần đệm bộ nhớ (Padding): 16 + 40 + 4 = 60 bytes, bo tròn lên bội số của 8 là 64 bytes.
+
+- Tổng chi phí bộ nhớ cho một Node là 64 bytes. Với cây có n cặp key-value, ta có n đối tượng Node, tổng cộng tốn 64n bytes.
+
+- Kết luận: ~ 64n (bytes)
