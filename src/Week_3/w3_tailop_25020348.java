@@ -1,4 +1,8 @@
-package edu.princeton.cs.algs4;
+package Week_3;
+
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.Stack;
+import edu.princeton.cs.algs4.StdOut;
 
 public class w3_tailop_25020348 {
 
@@ -10,7 +14,7 @@ public class w3_tailop_25020348 {
 
     public static String infixToPostfix(String infix) {
         StringBuilder postfix = new StringBuilder(); 
-        Stack<Character> stack = new Stack<>();      
+        Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < infix.length(); i++) {
             char c = infix.charAt(i);
